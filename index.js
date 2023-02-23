@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import userRoute from "./routes/user.js"
 import authRoute from "./routes/auth.js"
 import productRoute from "./routes/product.js"
+import cartRoute from "./routes/cart.js"
 import databaseLoader from "./middleware/databaseLoader.js";
 const app = express();
 dotenv.config();
@@ -17,6 +18,7 @@ async function boot() {
     app.use("/api/product", productRoute);
     app.use("/api/", authRoute);
     app.use("/api/user", userRoute);
+    app.use("/api/cart", cartRoute);
     app.listen(process.env.PORT || 5000, () => console.log("SERVER UP"));
 }
 boot()
