@@ -1,7 +1,9 @@
+import { Response } from "express";
 import Product from "../../models/Product.js";
+import { searchParamsType } from "../../types/searchParamsType.js";
+import { searchRequestType } from "../../types/searchRequestType.js";
 
-
-export default async function searchProducts(req, res) {
+export default async function searchProducts(req: searchRequestType, res: Response) {
     const { categories, rating, price, title } = req.query;
     let page = req.query.page;
     let limit = req.query.limit;
@@ -9,7 +11,7 @@ export default async function searchProducts(req, res) {
     if (isNaN(limit) || limit > 5) limit = 5;
     page = Math.abs(page);
     limit = Math.abs(limit);
-    const searchQuery = {}
+    const searchQuery: searchParamsType = {}
     if (categories) searchQuery.categories = categories;
     if (rating) searchQuery.rating = { $gte: rating };
     if (price) searchQuery.price = { $lte: price };

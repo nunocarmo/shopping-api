@@ -1,13 +1,17 @@
 import User from "../../models/User.js";
 import CryptoJS from "crypto-js";
+import { Request, Response } from "express";
+import { registerBodyType } from "../../types/registerBodyType.js";
 
-export default function register(req, res) {
-    const { username, email, password } = req.body;
+
+
+export default function register(req: Request, res: Response) {
+    const { username, email, password } = req.body as registerBodyType;
     if (!username || !email || !password) return res.status(400).send({ error: "Missing fields" });
     const newUser = new User({
         username,
         email,
-        password: CryptoJS.AES.encrypt(password, process.env.ENCRYPT_KEY),
+        password: CryptoJS.AES.encrypt(password, process.env.ENCRYPT_KEY as string),
     })
     newUser.save()
         .then(savedUser => res.status(201).json(savedUser))

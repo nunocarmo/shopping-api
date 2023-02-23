@@ -12,7 +12,7 @@ dotenv.config();
 boot();
 
 async function boot() {
-    await mongoose.connect(process.env.MONGO_URL)
+    await mongoose.connect(process.env.MONGO_URL as string)
         .then(() => console.log("CONNECTED TO MONGO"))
         .catch((err) => console.log(err));
     await databaseLoader();

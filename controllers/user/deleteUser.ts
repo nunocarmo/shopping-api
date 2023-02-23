@@ -1,8 +1,9 @@
+import { Response } from "express";
 import User from "../../models/User.js";
+import { authRequest } from "../../types/authRequest.js";
 
-export default async function deleteUser(req, res) {
+export default function deleteUser(req: authRequest, res: Response) {
     const { id } = req.user;
-    console.log(id)
     User.findByIdAndDelete(id)
         .then(user => res.status(200).send("Account Deleted"))
         .catch(err => {
