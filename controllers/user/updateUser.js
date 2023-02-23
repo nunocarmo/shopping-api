@@ -1,4 +1,4 @@
-import User from "../models/User.js";
+import User from "../../models/User.js";
 import CryptoJS from "crypto-js";
 
 export default async function updateUser(req, res) {
