@@ -22,5 +22,3 @@ async function boot() {
     app.listen(process.env.PORT || 5000, () => console.log("SERVER UP"));
 }
 boot()
-
-
