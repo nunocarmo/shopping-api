@@ -1,12 +1,12 @@
-import { Request } from "express";
-import { authRequest } from "./authRequest";
+import { Request } from 'express';
+import { authRequest } from './authRequest';
 
 type orderType = Request & authRequest & {
     products: {
-        productId: String
+        productId: string
         quantity: number
     }
     amount: number
-    address: Object
+    address: unknown
 }
-export { orderType }
+export { orderType };

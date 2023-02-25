@@ -1,5 +1,5 @@
 type cartProduct = {
-    productId: String
+    productId: string
     quantity: number
 }
-export { cartProduct }
+export { cartProduct };

@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
+import { Request, Response, NextFunction } from 'express';
 
-type verifyTokenFnType = (req: Request, res: Response, next: any) => Response<any, Record<string, any>> | undefined;
+type verifyTokenFnType = (req: Request, res: Response, next: NextFunction) => Response<unknown, Record<string, unknown>> | undefined;
 
-export { verifyTokenFnType }
+export { verifyTokenFnType };

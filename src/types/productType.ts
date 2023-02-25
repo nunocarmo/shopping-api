@@ -1,5 +1,5 @@
 type productType = {
-    _id?: any | undefined,
+    _id?: unknown | undefined,
     title?: string,
     description?: string,
     img?: string,
@@ -10,4 +10,4 @@ type productType = {
     __v?: number,
 }
 
-export { productType }
+export { productType };

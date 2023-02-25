@@ -1,8 +1,8 @@
-import Product from "../models/Product";
-import { externalApiProductType } from "../types/externalApiProductType";
+import Product from '../models/Product';
+import { externalApiProductType } from '../types/externalApiProductType';
 
 export default async function databaseLoader() {
-    const products: externalApiProductType[] = await fetch("https://fakestoreapi.com/products").then(items => items.json());
+    const products: externalApiProductType[] = await fetch('https://fakestoreapi.com/products').then(items => items.json());
     products.forEach(async (product) => {
         const newProduct = new Product({
             title: product.title,
@@ -13,7 +13,7 @@ export default async function databaseLoader() {
             rating: product.rating.rate,
             amount: 20,
         });
-        const exist = await Product.exists({ title: product.title })
+        const exist = await Product.exists({ title: product.title });
         if (exist === null) newProduct.save();
     });
 

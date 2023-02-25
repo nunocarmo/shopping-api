@@ -1,11 +1,11 @@
 type externalApiProductType = {
-    title: String,
-    description: String,
-    image: String,
-    category: String,
-    price: Number,
+    title: string,
+    description: string,
+    image: string,
+    category: string,
+    price: number,
     rating: {
-        rate: Number
+        rate: number
     }
 }
-export { externalApiProductType }
+export { externalApiProductType };

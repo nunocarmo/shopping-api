@@ -1,13 +1,13 @@
-import { Request } from "express";
+import { Request } from 'express';
 
 type searchRequestType = Request & {
     query: {
         page: number
         limit: number
-        categories?: String
+        categories?: string
         rating?: number
         price?: number
-        title?: String
+        title?: string
     }
 }
-export { searchRequestType }
+export { searchRequestType };

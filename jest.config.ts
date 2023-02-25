@@ -6,6 +6,6 @@ export default {
   testEnvironment: 'node',
   testMatch: ["**/src/__tests__/*.test.ts"],
   verbose: true,
-  forceExit: true,
-
+  /* forceExit: true, */
+  /* clearMocks: true, */
 }

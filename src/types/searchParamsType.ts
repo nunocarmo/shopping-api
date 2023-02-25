@@ -1,7 +1,7 @@
 type searchParamsType = {
-    categories?: String
-    rating?: Object
-    price?: Object
-    title?: Object
+    categories?: string
+    rating?: unknown
+    price?: unknown
+    title?: unknown
 }
-export { searchParamsType }
+export { searchParamsType };

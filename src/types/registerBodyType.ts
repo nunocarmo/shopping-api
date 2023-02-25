@@ -1,6 +1,6 @@
 type registerBodyType = {
-    username: String,
-    email: String,
+    username: string,
+    email: string,
     password: string | CryptoJS.lib.WordArray
 }
-export { registerBodyType }
+export { registerBodyType };

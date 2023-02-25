@@ -1,14 +1,14 @@
-import { Request } from "express";
+import { Request } from 'express';
 
 type userType = {
-    id: String,
-    name: String,
+    id: string,
+    name: string,
 }
 type authRequest = Request & {
     headers: {
-        authorization: String
+        authorization: string
     },
     user: userType,
 }
 
-export { authRequest, userType }
+export { authRequest, userType };

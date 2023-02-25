@@ -1,11 +1,11 @@
-import { Response } from "express";
-import Order from "../../models/Order";
-import { orderType } from "../../types/orderType";
+import { Response } from 'express';
+import Order from '../../models/Order';
+import { orderType } from '../../types/orderType';
 
 
 export default function createOrder(req: orderType, res: Response) {
     const { products, amount, address } = req.body;
-    if (!products || !amount || !address) return res.status(400).send("Missing information");
+    if (!products || !amount || !address) return res.status(400).send('Missing information');
     const newOrder = new Order({
         userId: req.user.id,
         products,
@@ -13,6 +13,6 @@ export default function createOrder(req: orderType, res: Response) {
         address,
     });
     newOrder.save();
-    res.status(200).send("Order Created");
+    res.status(200).send('Order Created');
 }
 

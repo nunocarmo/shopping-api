@@ -1,10 +1,10 @@
-import { Response } from "express";
-import Cart from "../../models/Cart";
-import { authRequest } from "../../types/authRequest";
+import { Response } from 'express';
+import Cart from '../../models/Cart';
+import { authRequest } from '../../types/authRequest';
 
 
 export default function getCart(req: authRequest, res: Response) {
-    Cart.findOne({ userId: req.user.id })
+    Cart.findOne({ userId: req.user.id }).populate('products.productId')
         .then(cart => res.status(200).json(cart))
-        .catch(err => res.status(500).send("Something went wrong"));
+        .catch(() => res.status(500).send('Something went wrong'));
 }

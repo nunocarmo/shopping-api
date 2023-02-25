@@ -1,6 +1,6 @@
-import { cartProduct } from "./cartProduct"
+import { cartProduct } from './cartProduct';
 
 type cartUpdateType = {
     products?: cartProduct[]
 }
-export { cartUpdateType }
+export { cartUpdateType };
