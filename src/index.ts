@@ -13,6 +13,3 @@ async function boot() {
     const app = createServer();
     app.listen(process.env.PORT || 5000, () => console.log('SERVER UP'));
 }
-
-
-
