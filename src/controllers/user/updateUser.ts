@@ -15,6 +15,6 @@ export default async function updateUser(req: authRequest, res: Response) {
     if (email) updateBody.email = email;
     if (password) updateBody.password = CryptoJS.AES.encrypt(password, process.env.ENCRYPT_KEY as string);
     User.findByIdAndUpdate(id, { $set: updateBody }, { new: true })
-        .then(() => res.status(200).send('User Was Updated'))
+        .then((user) => res.status(200).json({ _id: user?._id, email: user?.email, username: user?.username, __v: user?.__v }))
         .catch(() => res.status(500).send('Something went wrong'));
 }

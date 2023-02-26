@@ -1,5 +1,7 @@
+import mongoose from 'mongoose';
+
 type loginType = {
-    _id: string
+    _id?: string | mongoose.ObjectId
     username: string
     email: string
     password: string | CryptoJS.lib.CipherParams
