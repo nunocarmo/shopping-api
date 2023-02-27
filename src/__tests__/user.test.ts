@@ -38,7 +38,7 @@ describe('User', () => {
 
     describe('Get', () => {
         describe('User information without login in or with missing token', () => {
-            it('should return a 401', async () => {
+            it('should return a 403', async () => {
                 const { statusCode } = await supertest(app).get('/api/user/profile');
                 expect(statusCode).toEqual(403);
             });
@@ -101,10 +101,6 @@ describe('User', () => {
             });
         });
     });
-
-
-
-
 });
 
 

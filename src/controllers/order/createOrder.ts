@@ -13,6 +13,6 @@ export default function createOrder(req: orderType, res: Response) {
         address,
     });
     newOrder.save();
-    res.status(200).send('Order Created');
+    res.status(201).send('Order Created');
 }
 
