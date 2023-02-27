@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-
+import cors from 'cors';
 import databaseLoader from './middleware/databaseLoader';
 import createServer from './utils/server';
 dotenv.config();
@@ -11,5 +11,6 @@ async function boot() {
         .catch((err) => console.log(err));
     await databaseLoader();
     const app = createServer();
+    app.use(cors());
     app.listen(process.env.PORT || 5000, () => console.log('SERVER UP'));
 }
