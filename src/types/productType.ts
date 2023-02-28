@@ -1,3 +1,5 @@
+import mongoose from 'mongoose';
+
 type productType = {
     _id?: unknown | undefined,
     title?: string,
@@ -5,7 +7,7 @@ type productType = {
     img?: string,
     categories?: string,
     price?: number,
-    rating?: number,
+    reviews?: Array<mongoose.Types.ObjectId>,
     amount?: number,
     __v?: number,
 }

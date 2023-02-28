@@ -6,7 +6,7 @@ const productSchema = new mongoose.Schema({
     img: { type: String, require: true },
     categories: { type: String, require: true },
     price: { type: Number, require: true },
-    rating: { type: Number, default: 0 },
+    reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Review' }],
     amount: { type: Number, require: true },
 });
 

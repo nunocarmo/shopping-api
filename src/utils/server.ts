@@ -4,7 +4,7 @@ import authRoute from '../routes/auth';
 import productRoute from '../routes/product';
 import cartRoute from '../routes/cart';
 import orderRoute from '../routes/order';
-//import reviewRoute from '../routes/reviews';
+import reviewRoute from '../routes/reviews';
 
 export default function createServer() {
     const app = express();
@@ -18,5 +18,5 @@ function configRoutes(app: Express) {
     app.use('/api/cart', cartRoute);
     app.use('/api/order', orderRoute);
     app.use('/api/product', productRoute);
-    //app.use('/api/review', reviewRoute);
+    app.use('/api/review', reviewRoute);
 }

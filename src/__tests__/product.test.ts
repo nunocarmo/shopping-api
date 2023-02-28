@@ -14,6 +14,7 @@ const product: productType = {
     img: 'mock',
     price: 11,
     amount: 10,
+    reviews: [],
 };
 const productWithMissingFields: productType = {
     title: 'next',
@@ -47,7 +48,6 @@ describe('product', () => {
                     .send(product);
                 product._id = body._id;
                 product.__v = expect.any(Number);
-                product.rating = 0;
                 expect(statusCode).toBe(200);
                 expect(body).toEqual(product);
             });

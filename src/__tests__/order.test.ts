@@ -78,7 +78,7 @@ const userOrders = [
                     description: 'mock',
                     img: 'mock',
                     price: 11,
-                    rating: 0,
+                    reviews: [],
                     title: 'new Title',
                 },
                 quantity: 1
@@ -139,7 +139,6 @@ describe('Cart', () => {
                     const jwt = signJwt(logUserMock);
                     const { body, statusCode } = await supertest(app).get('/api/order')
                         .set('Authorization', `Bearer ${jwt}`);
-                    console.log(body);
                     expect(body).toEqual(userOrders);
                     expect(statusCode).toEqual(200);
                 });
